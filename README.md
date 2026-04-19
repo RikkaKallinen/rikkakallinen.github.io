@@ -1,36 +1,23 @@
-# Rikka Kallinen - Developer Portfolio
+# Portfolio
 
-Personal portfolio site to showcase my projects from college. Built with HTML, CSS, and vanilla JS — no frameworks.
+The site I built to showcase the projects I completed during my B.S. in Software Development at DeVry. First time I've deployed something publicly.
 
-**Live:** [rikkakallinen.github.io](https://rikkakallinen.github.io)
-
-## What it does
-
-- Single-page responsive layout with smooth scroll navigation
-- Project cards with filtering by tech stack and image lightbox
-- Typing animation in the hero, scroll-triggered reveals, stat counters
-- Mobile-friendly with collapsible hamburger nav
-- Jungle green color scheme using CSS variables
+Live at https://rikkakallinen.github.io.
 
 ## Stack
 
-- HTML5, CSS3 (grid, flexbox, variables, animations), vanilla JavaScript
-- Google Fonts (Inter + Fira Code)
-- Hosted on GitHub Pages
-
-## Files
-
-```
-index.html     - page structure / content
-styles.css     - all styling and responsive breakpoints
-script.js      - interactivity (nav, typing, filtering, lightbox, etc)
-images/        - project screenshots organized by project
-```
+HTML, CSS, and vanilla JavaScript. No build step. Hosted on GitHub Pages, redeploys automatically on push to main.
 
 ## Run locally
 
-Just open `index.html` in a browser. Or:
+Open index.html in a browser, or serve it with:
 
 ```bash
 python3 -m http.server 8000
 ```
+
+## Files
+
+- index.html, styles.css, script.js: the site itself
+- images/: project screenshots, organized by project
+- Rikka_Kallinen_Master_Resume.docx: resume, also linked from the site as a download
