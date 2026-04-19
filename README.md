@@ -1,6 +1,6 @@
 # Portfolio
 
-The site I built to showcase the projects I completed during my B.S. in Software Development at DeVry. First time I've deployed something publicly.
+The site I built to showcase the projects I completed during my B.S. in Computer Information Systems at DeVry. First time I've deployed something publicly.
 
 Live at https://rikkakallinen.github.io.
 
