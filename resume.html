@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Rikka Kallinen — Resume</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+    --green-dark:   #1b4332;
+    --green-mid:    #2d6a4f;
+    --green-accent: #40916c;
+    --cream:        #f8f6f1;
+    --cream-dark:   #ede9df;
+    --text:         #2c2c2c;
+    --text-light:   #555;
+    --text-muted:   #777;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text);
+    background: #d4d4d4;
+    font-size: 10pt;
+    line-height: 1.4;
+}
+
+.page {
+    width: 8.5in;
+    min-height: 11in;
+    margin: 20px auto;
+    background: white;
+    display: grid;
+    grid-template-columns: 2.6in 1fr;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+
+/* ===== LEFT SIDEBAR ===== */
+.sidebar {
+    background: var(--green-dark);
+    color: white;
+    padding: 0.5in 0.35in;
+}
+
+.headshot {
+    width: 1.5in;
+    height: 1.5in;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--green-accent);
+    display: block;
+    margin: 0 auto 18pt;
+}
+
+.sidebar-section { margin-bottom: 18pt; }
+
+.sidebar-section h2 {
+    font-size: 9pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5pt;
+    color: var(--green-accent);
+    margin-bottom: 8pt;
+    padding-bottom: 4pt;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.contact-item {
+    font-size: 9pt;
+    margin-bottom: 4pt;
+    color: rgba(255,255,255,0.9);
+    word-break: break-word;
+}
+
+.contact-label {
+    font-family: 'Fira Code', monospace;
+    font-size: 7.5pt;
+    color: var(--green-accent);
+    display: block;
+    margin-top: 6pt;
+    margin-bottom: 1pt;
+}
+
+.skill-group { margin-bottom: 10pt; }
+
+.skill-group-label {
+    font-size: 8.5pt;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 3pt;
+}
+
+.skill-tags {
+    font-size: 8.5pt;
+    color: rgba(255,255,255,0.85);
+    line-height: 1.5;
+}
+
+.edu-item { margin-bottom: 8pt; }
+.edu-item h3 {
+    font-size: 9pt;
+    font-weight: 600;
+    color: white;
+    line-height: 1.3;
+    margin-bottom: 1pt;
+}
+.edu-item p {
+    font-size: 8.5pt;
+    color: rgba(255,255,255,0.75);
+}
+
+/* ===== RIGHT MAIN COLUMN ===== */
+.main {
+    padding: 0.5in 0.45in;
+    background: white;
+}
+
+.name {
+    font-size: 26pt;
+    font-weight: 800;
+    color: var(--green-dark);
+    line-height: 1.05;
+    letter-spacing: -0.5pt;
+}
+
+.title {
+    font-size: 11pt;
+    font-weight: 500;
+    color: var(--green-mid);
+    margin-top: 2pt;
+    margin-bottom: 14pt;
+    font-family: 'Fira Code', monospace;
+}
+
+.section { margin-bottom: 14pt; }
+
+.section h2 {
+    font-size: 10pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5pt;
+    color: var(--green-dark);
+    padding-bottom: 3pt;
+    margin-bottom: 8pt;
+    border-bottom: 2px solid var(--green-accent);
+}
+
+.summary {
+    font-size: 9.5pt;
+    line-height: 1.45;
+    color: var(--text-light);
+}
+
+.entry { margin-bottom: 9pt; }
+
+.entry-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 8pt;
+    margin-bottom: 1pt;
+}
+
+.entry-title {
+    font-size: 10pt;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.entry-date {
+    font-size: 8.5pt;
+    color: var(--text-muted);
+    font-family: 'Fira Code', monospace;
+    white-space: nowrap;
+}
+
+.entry-meta {
+    font-size: 8.5pt;
+    color: var(--green-mid);
+    font-weight: 500;
+    margin-bottom: 3pt;
+}
+
+.entry ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.entry ul li {
+    font-size: 9pt;
+    line-height: 1.4;
+    color: var(--text-light);
+    padding-left: 10pt;
+    position: relative;
+    margin-bottom: 1.5pt;
+}
+
+.entry ul li::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: var(--green-accent);
+    font-size: 8pt;
+}
+
+.see-more {
+    font-size: 8.5pt;
+    color: var(--text-muted);
+    font-style: italic;
+    margin-top: 4pt;
+    padding-left: 2pt;
+}
+
+.see-more a {
+    color: var(--green-mid);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+/* ===== PRINT ===== */
+@page {
+    size: letter;
+    margin: 0;
+}
+
+@media print {
+    html, body { background: white; }
+    .page {
+        margin: 0;
+        box-shadow: none;
+        width: 8.5in;
+        min-height: 11in;
+    }
+    * {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="page">
+
+    <!-- ===== SIDEBAR ===== -->
+    <aside class="sidebar">
+
+        <img src="images/headshot.jpg" alt="Rikka Kallinen" class="headshot">
+
+        <div class="sidebar-section">
+            <h2>Contact</h2>
+            <span class="contact-label">// location</span>
+            <div class="contact-item">Minneapolis, MN</div>
+            <div class="contact-item">U.S. Citizen</div>
+
+            <span class="contact-label">// online</span>
+            <div class="contact-item">github.com/RikkaKallinen</div>
+            <div class="contact-item">rikkakallinen.github.io</div>
+            <div class="contact-item">linkedin.com/in/audreyrkallinen2117</div>
+        </div>
+
+        <div class="sidebar-section">
+            <h2>Skills</h2>
+
+            <div class="skill-group">
+                <div class="skill-group-label">Languages</div>
+                <div class="skill-tags">Java, Python, JavaScript, SQL, C#/.NET, C++, HTML/CSS</div>
+            </div>
+
+            <div class="skill-group">
+                <div class="skill-group-label">Frameworks &amp; Libraries</div>
+                <div class="skill-tags">React, Node.js, .NET WinForms, Java Swing, pandas, matplotlib, Tkinter</div>
+            </div>
+
+            <div class="skill-group">
+                <div class="skill-group-label">Databases</div>
+                <div class="skill-tags">SQLite, MySQL, SQL Server</div>
+            </div>
+
+            <div class="skill-group">
+                <div class="skill-group-label">Dev Tools</div>
+                <div class="skill-tags">Git/GitHub, GitHub Actions, Visual Studio, VS Code, IntelliJ/Rider, Linux CLI</div>
+            </div>
+
+            <div class="skill-group">
+                <div class="skill-group-label">Security</div>
+                <div class="skill-tags">Wireshark, Snort IDS, Security Onion, iptables, Sysinternals</div>
+            </div>
+
+            <div class="skill-group">
+                <div class="skill-group-label">Embedded</div>
+                <div class="skill-tags">Arduino Mega 2560, ESP32, TinkerCad</div>
+            </div>
+        </div>
+
+        <div class="sidebar-section">
+            <h2>Education</h2>
+
+            <div class="edu-item">
+                <h3>B.S. Software Development</h3>
+                <p>DeVry University</p>
+            </div>
+            <div class="edu-item">
+                <h3>A.S. Engineering Technology</h3>
+                <p>DeVry University</p>
+            </div>
+            <div class="edu-item">
+                <h3>Tech. Diploma — Computer Programming</h3>
+                <p>DeVry University</p>
+            </div>
+            <div class="edu-item">
+                <h3>Tech. Diploma — Network Administration</h3>
+                <p>Lake Superior College</p>
+            </div>
+            <div class="edu-item">
+                <h3>Tech. Diploma — Cybersecurity</h3>
+                <p>Lake Superior College</p>
+            </div>
+        </div>
+
+    </aside>
+
+    <!-- ===== MAIN ===== -->
+    <main class="main">
+
+        <h1 class="name">Rikka Kallinen</h1>
+        <div class="title">// software developer</div>
+
+        <section class="section">
+            <h2>Summary</h2>
+            <p class="summary">Software developer with a B.S. in Software Development and hands-on experience across full-stack development, embedded systems, data engineering, and cybersecurity. Background in fintech operations at U.S. Bank brings strong analytical skills, accuracy, and a compliance mindset to every project. Seeking remote entry-level developer roles.</p>
+        </section>
+
+        <section class="section">
+            <h2>Selected Projects</h2>
+
+            <div class="entry">
+                <div class="entry-header">
+                    <div class="entry-title">Weather Data Collection &amp; Analysis</div>
+                </div>
+                <div class="entry-meta">Python · SQLite · pandas · matplotlib · noaa-sdk</div>
+                <ul>
+                    <li>Built a multi-script data pipeline that fetched 14 days of hourly NOAA observations (404 rows) into SQLite with fields for temperature, wind, humidity, pressure, and visibility</li>
+                    <li>Wrote SQL queries via pandas, converted Celsius to Fahrenheit, and generated matplotlib line, box, histogram, and comparative visualizations</li>
+                </ul>
+            </div>
+
+            <div class="entry">
+                <div class="entry-header">
+                    <div class="entry-title">Data Structures &amp; Algorithms Benchmark Suite</div>
+                </div>
+                <div class="entry-meta">Python</div>
+                <ul>
+                    <li>Implemented ArrayList, LinkedList, and Binary Search Tree from scratch; benchmarked six sorting and two search algorithms across datasets from 100 to 100,000 records</li>
+                    <li>Simulated an Automatic Call Distributor using a Queue with random routing and real-time queue tracking</li>
+                </ul>
+            </div>
+
+            <div class="entry">
+                <div class="entry-header">
+                    <div class="entry-title">Cybersecurity Infrastructure Project</div>
+                </div>
+                <div class="entry-meta">Wireshark · Snort · Security Onion · iptables · Sysinternals</div>
+                <ul>
+                    <li>Analyzed packet captures for OS fingerprinting and port scan detection; configured Snort IDS with custom rules verified through Security Onion</li>
+                    <li>Built iptables firewall with time-based rules, NAT, and DMZ routing; performed live memory analysis on Windows and Linux VMs</li>
+                </ul>
+            </div>
+
+            <div class="entry">
+                <div class="entry-header">
+                    <div class="entry-title">Smart Home Automation &amp; Monitoring</div>
+                </div>
+                <div class="entry-meta">C++ · Arduino IDE · TinkerCad</div>
+                <ul>
+                    <li>Wired and programmed three independent sensor modules on an Arduino Mega 2560: a door sensor with LED/buzzer alerts, an ultrasonic distance sensor with proximity scaling, and a photoresistor-driven light</li>
+                    <li>Validated circuits in TinkerCad before physical build; integrated all modules into a single coordinated sketch</li>
+                </ul>
+            </div>
+
+            <p class="see-more">See all 11 projects at <a href="https://rikkakallinen.github.io">rikkakallinen.github.io</a></p>
+        </section>
+
+        <section class="section">
+            <h2>Professional Experience</h2>
+
+            <div class="entry">
+                <div class="entry-header">
+                    <div class="entry-title">Cash Logistics Analyst</div>
+                    <div class="entry-date">Dec 2025 – Present</div>
+                </div>
+                <div class="entry-meta">U.S. Bank · St. Paul, MN</div>
+                <ul>
+                    <li>Analyze cash logistics data to support operational decision-making across vault and teller network</li>
+                </ul>
+            </div>
+
+            <div class="entry">
+                <div class="entry-header">
+                    <div class="entry-title">Cash Vault Operations Processor</div>
+                    <div class="entry-date">Jun 2024 – Dec 2025</div>
+                </div>
+                <div class="entry-meta">U.S. Bank · St. Paul, MN</div>
+                <ul>
+                    <li>Processed high-volume cash vault transactions with accuracy and compliance in a regulated fintech environment</li>
+                    <li>Used internal banking systems and Microsoft Excel for reporting, reconciliation, and data tracking</li>
+                </ul>
+            </div>
+
+            <div class="entry">
+                <div class="entry-header">
+                    <div class="entry-title">Vault Teller</div>
+                    <div class="entry-date">Oct 2022 – May 2024</div>
+                </div>
+                <div class="entry-meta">U.S. Bancorp · Duluth, MN</div>
+                <ul>
+                    <li>Managed vault operations, cash handling, and transaction processing with strict accuracy standards</li>
+                </ul>
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+</body>
+</html>

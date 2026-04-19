@@ -20,4 +20,5 @@ python3 -m http.server 8000
 
 - index.html, styles.css, script.js: the site itself
 - images/: project screenshots, organized by project
-- Rikka_Kallinen_Master_Resume.docx: resume, also linked from the site as a download
+- Rikka_Kallinen_Resume.pdf: resume, linked from the site as a download
+- resume.html: source for the resume PDF (open in browser, print to PDF to regenerate)
